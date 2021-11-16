@@ -1,0 +1,2 @@
+DOT pin 1 => 0.3 di raggio
+.Designator => 0.8 True Type
