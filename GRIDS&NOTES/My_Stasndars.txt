@@ -1,0 +1,5 @@
+DOT pin 1 => 0.3mm di raggio
+.Designator => 0.8mm True Type
+IC Top_Overlay line => 0.3mm
+Silkreen to pad >0.2mm
+

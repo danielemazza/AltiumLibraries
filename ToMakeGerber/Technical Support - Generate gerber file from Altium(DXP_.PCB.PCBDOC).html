@@ -1,0 +1,1617 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title id="title">Technical Support - Generate gerber file from Altium(DXP/.PCB.PCBDOC)</title>
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/base.css" type="text/css" rel="stylesheet">
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/public.css" type="text/css" rel="stylesheet">
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/headerfoot.css" type="text/css" rel="stylesheet">
+
+    
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/helpcenter.css" type="text/css" rel="stylesheet">
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/category.css" type="text/css" rel="stylesheet">
+    <script async="" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/analytics.js"></script><script src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/jquery-1.js" type="text/javascript"></script>
+    <script src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/layer.js" type="text/javascript"></script><link rel="stylesheet" href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/layer.css" id="layui_layer_skinlayercss" style="">
+
+    <script src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/project-public.js"></script>
+    <!--public要在msg之前引用-->
+    <script src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/project-msg.js"></script>
+    <link href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/webuploader.css" rel="stylesheet">
+    <script src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/webuploader.js"></script>
+    <style type="text/css">
+        .webuploader-pick {
+            color: #000000;
+            background: none;
+            padding: 0px;
+        }
+
+        #file_upload .webuploader-pick {
+            padding: 0px;
+            margin: 0px;
+            background: none;
+            width: 0px;
+            height: 0px;
+        }
+
+        #file_upload {
+            height: 0px;
+        }
+    </style>
+<style data-olark="true" type="text/css">.olark-key,#hbl_code,#olark-data{display: none !important;}</style><style data-olark="true" type="text/css">@media print {#habla_beta_container_do_not_rely_on_div_classes_or_names {display: none !important}}</style><link data-olark="true" rel="stylesheet" href="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/theme.css" type="text/css"></head>
+<body><div style="display: none;" id="olark"><olark><iframe id="olark-loader" frameborder="0"></iframe></olark></div>
+
+
+
+
+
+
+<script>
+        function closeAdv(obj,name,days) {
+            $(obj).parent().parent().hide();
+            setCookie(name, 'true', days == 0 ? 1 : days);
+        }
+        function setCookie(name, value, Days) {
+
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + ";path=/";
+        }
+    </script>
+
+<div class="header">
+  
+     <div class="topnav-bg"></div>
+    <div class="header-wrap wcontainer clearfix">
+        <div class="hm-left">
+            <div class="logo p-icon">
+                <a href="https://www.pcbway.com/" title="Custom PCB Prototype Manufacturer">PCBWay</a>
+            </div>
+            <div class="secondary-branding">
+                <p class="h1">PCB Prototype the Easy Way</p>
+                <p>Full feature custom PCB prototype service.</p>
+            </div>
+        </div>
+        <div class="hm-right">
+            <div class="mobile_icon">
+                <a target="_blank" href="https://www.pcbway.com/mobilepage.html">
+                    <p>Mobile</p>
+                </a>
+            </div>
+            <div class="ng-help " onmousemove="$(this).addClass('hd-func-dropdown-active')" onmouseout="$(this).removeClass('hd-func-dropdown-active')">
+                        <a class="ng-help-ct" href="javascript:;">Help Center <i class="p-icon icon-select-angle"></i></a>
+                        <div class="hd-list hd-fold hd-help-list">
+                            <a href="https://www.pcbway.com/helpcenter" rel="nofollow">Customer Service</a>
+                            <a href="https://www.pcbway.com/helpcenter/Findproducts/How_do_I_place_an_order_.html" rel="follow">How to order</a>
+                            <a href="https://www.pcbway.com/helpcenter/disputeprocess/" rel="follow">Service &amp; Refunds</a>
+                        </div>
+                    </div>
+            <div class="hd-language">
+                <!--hover addclass "hd-func-dropdown-active"-->
+                <span class="hd-cur-item">
+                        <i class="p-icon icon-flag icon-en"></i> EN  <i class="p-icon icon-select-angle"></i>
+                </span>
+
+                <div class="hd-list hd-fold hd-language-list">
+                    <a href="https://www.pcbway.ru/helpcenter/technical_support/Generate_gerber_file_from_Altium.html" rel="nofollow" style="display:block;box-sizing: content-box !important;"><i class="p-icon icon-flag icon-ru"></i> русский</a>
+                    <a href="https://www.pcbway.es/helpcenter/technical_support/Generate_gerber_file_from_Altium.html" rel="nofollow" style="display:block;box-sizing: content-box !important;"><i class="p-icon icon-flag icon-es"></i> Español</a>
+                    <a href="https://www.pcbway.fr/helpcenter/technical_support/Generate_gerber_file_from_Altium.html" rel="nofollow" style="display:block;box-sizing: content-box !important;"><i class="p-icon icon-flag icon-fr"></i> Français</a>
+                    <a href="https://www.pcbway.com/helpcenter/technical_support/Generate_gerber_file_from_Altium.html" rel="nofollow" style="display:none"><i class="p-icon icon-flag icon-en"></i> English</a>
+                    <a href="https://www.pcbway.jp/helpcenter/technical_support/Generate_gerber_file_from_Altium.html" rel="nofollow" style="display:block;box-sizing: content-box !important;"><i class="p-icon icon-flag icon-jp"></i> 日本語</a>
+                </div>
+            </div>
+            <div class="nav-cart">
+                <a href="https://member.pcbway.com/order/cartlist" rel="nofollow">
+                    <i class="p-icon"></i>
+                    <span class="text hidden-sm">Cart</span>
+                    <span class="cart-number">0</span>
+                </a>
+            </div>
+            <div class="nav-user-account">
+                <!--hover addclass"user-account-unfold"-->
+                <div class="user-account-info clearfix">
+                    <i class="p-icon"></i>
+                    <div class="user-account-inner">
+                        <span class="account-unsigned"><a href="https://www.pcbway.com/Member/Login/" rel="nofollow">Sign in</a><span class="ua-line">|</span><a href="https://www.pcbway.com/Member/Login" rel="nofollow">Join</a></span>
+                        <span id="login-stat-signed" class="notranslate" style="display:none">Hi, <b></b></span>
+
+                        <div class="mypcbway">
+                            <a rel="nofollow" href="https://member.pcbway.com/"><span>My PCBWay</span></a> <!--<a rel="nofollow" href="/member/">My PCBWay</a>-->
+                            <b style="display: inline;">(0)</b><!--cooki 记录帐号 提供多少订单信息-->
+                        </div>
+                    </div>
+                </div>
+                <div class="user-account-main">
+                    <div class="flyout-user-signout"><a href="javascript:signout();" rel="nofollow">Sign Out</a></div><!--登录后 addstyle"display:block"-->
+                    <div class="flyout-user-signIn" style="display: block;">
+                        <!--登录前 addstyle"display:block"-->
+                        <p class="flyout-welcome-text">Welcome to PCBWay</p><!--没有cooki的时候 默认加"Welcome to PCBWay.com"-->
+                        <p><a class="sign-btn" href="https://www.pcbway.com/Member/Login/" rel="nofollow">Sign in</a></p>
+                    </div>
+                    <dl class="flyout-visitors-login" style="display: block;">
+                        <!--登录前 addstyle"display:block"-->
+                        <dt>New Customer?</dt>
+                        <dd><a class="join-btn" href="https://www.pcbway.com/Member/Login/" rel="nofollow">Join Free</a></dd>
+                    </dl>
+                    <div class="flyout-remind-list" style="display: none;"><p><a rel="nofollow" href="https://member.pcbway.com/Order/CartList"><b>(1)</b>Items in Awaiting payment Cart!</a></p></div>
+                    <ul class="flyout-quick-entry">
+                        <li><a href="https://member.pcbway.com/" rel="nofollow">My PCBWay</a></li>
+                        <li><a href="https://member.pcbway.com/order/cartlist/" rel="nofollow">My Order</a></li>
+                        <li><a href="https://member.pcbway.com/order/orderlist?type=1" rel="nofollow">Production Status</a></li>
+                        <li><a id="msg-center" rel="nofollow" href="https://member.pcbway.com/Message/Message">Message Center</a></li>
+                        <li><a href="https://member.pcbway.com/Member/coupons" rel="nofollow">My Coupons</a></li>
+                        <li><a href="https://member.pcbway.com/address/addoredit" rel="nofollow">Delivery Address</a></li>
+                        <li><a href="https://www.pcbway.com/helpcenter" target="_blank">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="isshownewhere" class="ui-newuser-coupon-tips" style="right: -10px; top: 56px; overflow: hidden; z-index: -1; display: block;">
+                <a href="https://www.pcbway.com/Member/Login/">
+                    <p>New here? Free for your first order!</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--登陆前显示-->
+    <div class="navigation" id="wwwNavigation">
+        <div class="navigation-nav wcontainer">
+            <span class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/">Home</a>
+            </span>
+            <span class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/orderonline.aspx">PCB Instant Quote</a>
+            </span>
+            <span style="position: relative;" class="topNavli">
+                <a class="navitem rapidp" href="https://www.pcbway.com/rapid-prototyping/">CNC | 3D Printing <i class="p-icon icon-select-angle"></i></a>
+                <span class="new" style="background: url(/img/images/10-off-mini.gif?v=201221) no-repeat;width: 37px;height: 18px;right: 0;top: 0;position: absolute;"></span>
+            </span>
+            <span class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/pcb-assembly.html">PCB Assembly </a>
+            </span>
+            <span style="position: relative;" class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/high-quality-pcb.html">Advanced PCB</a>
+                
+
+            </span>
+            <span class="topNavli">
+                <a class="navitem products " href="https://www.pcbway.com/capabilities.html">Product &amp; Capabilities  <i class="p-icon icon-select-angle"></i></a>
+            </span>
+            <span class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/why.html">Why Us?  </a>
+            </span>
+            <span class="topNavli">
+                <a class="navitem" target="_blank" href="https://www.pcbway.com/project/share/">Feedback </a>
+            </span>
+            
+            
+            <span class="topNavli">
+                <a class="navitem" target="_blank" href="https://www.pcbway.com/project/">Shared Projects</a>
+            </span>
+            <span class="topNavli">
+                <a class="navitem" href="https://www.pcbway.com/contact.html">Contact Us</a>
+            </span>
+            
+        </div>
+
+
+        <script type="text/javascript">
+            $(function () {
+                $('.products,.js-new-down1').hover(function () {
+                    $('.js-new-down1').show();
+                }, function () {
+                    $('.js-new-down1').hide();
+                });
+                $('.rapidp,.js-new-down').hover(function () {
+                    $('.js-new-down').show();
+                }, function () {
+                    $('.js-new-down').hide();
+                });
+            });
+        </script>
+        <div class="common-topbar-dropdown js-new-down1" style="display:none;">
+            <div class="common-topbar-dropdown-all-product" style="display:block">
+                <div class="all-product-column-wrapper clearfix">
+                    <div class="product-column">
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Printed Circuit Boards</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/capabilities.html">PCB Capabilities<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png"></a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/advanced-pcb-capabilities.html">Advanced PCB Capabilities</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Pinted_Circuit_Board_Prototype.html">PCB Prototype</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/General_introduction_of_Aluminum_PCB.html">Aluminum PCB</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_is_a_Rigid_Flex_PCBs.html">Rigid-Flex PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Metal_core_PCBs.html">Metal core PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_is_Flexible_PCB.html">Flexible PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_is_High_Frequency__HF__PCB_.html">High Frequency PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/High_TG_PCBs_High_Temperature_PCB_fr4_Material.html">High-TG PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Thick_Copper_PCBs.html">Thick-Copper PCBs</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_is_HDI_PCB.html">HDI PCB</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/LED_PCB.html">LED PCB</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/quickturn-pcb-fabrication.html">Quick turn PCB Fabrication</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb-prototyping.html">PCB Prototyping</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/low-volume-production.html">Low-volume Production</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb-service.html">PCB Production Process</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb-products.html">PCB Products</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/helpcenter/Engineering_Questions/">PCB Engineering Questions<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png"></a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/faq-of-pcb.html">FAQ of PCB</a></li>
+                                <li class="animate-text line"></li>
+                            </ul>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">SMD-Stencils</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/SMT_stencil_and_Laser_Stencil.html">Laser Stencil</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-column">
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">PCB Assembly</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_assembly_Capabilities.html">PCB Assembly Overview</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-capabilities.html">PCB Assembly Capability<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png"></a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/SMT_Assembly_Capabilities.html">SMT Assembly Capabilities</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Mixed_Assembly_Advantages.html">Mixed Assembly Advantages</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Through_Hole_Assembly.html">Through-Hole Assembly</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/BGA_Assembly_Capabilities.html">BGA Assembly Capabilities</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Electronic_Components.html">Components Sourcing</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Panel_Requirements_for_Assembly.html">Panel Requirements for Assembly</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-special-remind.html">Special Reminders</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-file-requirements.html">File Requirements</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-process.html">Production Process</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-products.html">PCB Assembly Products</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/assembly-faq.html">PCB Assembly FAQ</a></li>
+                                <li class="animate-text line"></li>
+                            </ul>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">PCB Design-Aid &amp; Layout</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_material_classification.html">Printed circuit board materials</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Design_and_Layout.html">PCB Design &amp; Layout</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Layer_Orientation.html">Layer Orientation</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Panel_Creation.html">Panel Creation</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_BGA.html">BGA</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Talking_about_the_Composition_of_PCB_Price.html">PCB Price Composition</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Gold_fingers.html">Gold fingers</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="product-column">
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Surface</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Comparison_of_several_PCB_surface_finish_types.html">Surface finish </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Solder_mask.html">Solder mask </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Via_Covering.html">Via Covering </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Silkscreen.html">Silkscreen </a></li>
+
+                                <li class="animate-text line"></li>
+                            </ul>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Drills &amp; Throughplating</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Blind_vias_and_Buried_Vias.html">Blind &amp; Buried Vias </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Annular_rings.html">Annular rings </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Sideplating.html">Sideplating </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_are_Plated_Half_Holes_Castellated_Holes_.html">Plated Half-holes </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Plated_through_slots.html">Plated-through slots </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Via_in_Pad.html">Via-in-Pad </a></li>
+                                <li class="animate-text line"></li>
+                            </ul>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Mechanics</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Milling.html">Milling </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_V_Scoring.html">V-Scoring </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Backdrill.html">Backdrill </a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="product-column">
+
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Layer buildup</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/multi-layer-laminated-structure.html">Multi-layer laminated structure<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png"></a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/What_is_layer_stack_up.html">Layer Stackup </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Cost_cores_Foil___Prepreg_for_PCBs.html">Prepregs, cores, foils </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/_Stack_up_for_Prototypes.html">Prototypes </a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Stack_up_for_FPC.html">Flex Stackup </a></li>
+                                <li class="animate-text line"></li>
+                            </ul>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-item-title animate-text">Quality</div>
+                            <ul>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Design_Rule_Check.html">Design Rule Check</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Automated_optical_inspection__AOI_.html">A.O.I.</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Electronic_test___probe_test.html">E-Test</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Automated_X_Ray_Inspection.html">X-RAY</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/Impedance_Control.html">Impedance Control</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/impedance_calculator.html">Impedance Calculation</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/RoHs_Lead_Free.html">ROHS-Lead Free</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_UL_Certification.html">UL Certification</a></li>
+                                <li class="animate-text"><a target="_blank" href="https://www.pcbway.com/pcb_prototype/PCB_Manufacturing_tolerances.html">Manufacturing tolerances</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="product-column">
+                        <div class="sub-cat-image"><a href="https://www.pcbway.com/orderonline.aspx"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/pcb_promotion.png" alt="pcb assembly promotion"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="common-topbar-dropdown diy-new-topbar js-new-down" style="display:none;">
+          <div class="common-topbar-dropdown-all-product">
+            <div class="all-product-column-wrapper clearfix">
+              <div class="product-column">
+                <div class="product-item">
+                  <div class="site-nav-slider">
+                    <div class="site-nar-item">
+                      <a class="site-nav-link" href="https://www.pcbway.com/rapid-prototyping/manufacture/?type=2&amp;reffercode=TOP">
+                        <div class="site-icon site-icon1"></div>
+                          <div class="site-drop-text">
+                              <div class="site-drop-title">
+                                3D Printing
+                              </div>
+                              <p class="site-drop-des">FDM, SLA, SLS, MJF, DMLS, Polyjet</p>
+                          </div>
+                          <div class="site-arrow"></div>
+                      </a>
+                    </div>
+                    <div class="site-nar-item">
+                      <a class="site-nav-link" href="https://www.pcbway.com/rapid-prototyping/manufacture/?type=1&amp;reffercode=TOP">
+                        <div class="site-icon site-icon2"></div>
+                        <div class="site-drop-text">
+                          <div class="site-drop-title">
+                            CNC Machining
+                          </div>
+                          <p class="site-drop-des">Milling (3-, 4- &amp; full 5-axis), turning</p>
+                        </div>
+                        <div class="site-arrow"></div>
+                      </a>
+                    </div>
+                    <div class="site-nar-item">
+                      <a class="site-nav-link" href="https://www.pcbway.com/rapid-prototyping/manufacture/?type=3&amp;reffercode=TOP">
+                        <div class="site-icon site-icon3"></div>
+                        <div class="site-drop-text">
+                          <div class="site-drop-title">
+                            Sheet Metal Fabrication
+                          </div>
+                          <p class="site-drop-des">Laser cutting, bending, post processing</p>
+                        </div>
+                        <div class="site-arrow"></div>
+                      </a>
+                    </div>
+                    <div class="site-nar-item">
+                      <a class="site-nav-link" href="https://www.pcbway.com/rapid-prototyping/injection-molding/">
+                        <div class="site-icon site-icon4"></div>
+                        <div class="site-drop-text">
+                          <div class="site-drop-title">
+                            Injection Molding
+                          </div>
+                          <p class="site-drop-des">
+                            Rapid tooling, multi-cavity molds
+                          </p>
+                        </div>
+                        <div class="site-arrow"></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-column cnctype-01">
+                <div class="product-item">
+                  <div class="product-item-title animate-text"><a href="https://www.pcbway.com/rapid-prototyping/3d-printing/">3D Printing</a></div>
+                  <ul>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-SLA.html">
+                        Stereolithography (SLA)<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png">
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-DLP.html">
+                        Digital Light Processing (DLP)
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-FDM.html">
+                        Fused Deposition Modeling (FDM)<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png">
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-SLM.html">
+                        Selective laser melting (SLM)
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-SLS.html">
+                        Selective Laser Sintering (SLS)
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/3D-Printing/3D-Printing-VC.html">
+                        Vacuum Casting (VC)
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-column cnctype-02">
+                <div class="product-item">
+                  <div class="product-item-title animate-text"><a href="https://www.pcbway.com/rapid-prototyping/cnc-machining/">CNC Machining</a></div>
+                  <ul>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/CNC-machining/CNC-Milling.html">
+                        CNC milling<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png">
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/CNC-machining/CNC-Turning.html">
+                        CNC turning<img style="width:14px; margin-left: 2px;vertical-align:middle;" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/hot.png">
+                      </a>
+                    </li>
+                    <li class="animate-text">
+                      <a href="https://www.pcbway.com/rapid-prototyping/CNC-machining/CNC-Laser-Cutting-Services.html">CNC Laser Cutting Service
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="product-column cnctype-03">
+                <div class="product-item">
+                  <div class="product-item-title animate-text"><a href="https://www.pcbway.com/rapid-prototyping/sheet-metal/">Sheet Metal Fabrication</a></div>
+                </div>
+              </div>
+              <div class="product-column cnctype-04">
+                <div class="product-item">
+                  <div class="product-item-title animate-text">
+                    <a href="https://www.pcbway.com/rapid-prototyping/injection-molding/">Injection Molding</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--登陆后显示-->
+</div>
+
+<script type="text/javascript">
+    // 抽奖用
+    
+
+
+    $(document).ready(function () {
+        //debugger;
+        $(".hd-language").mouseover(function () {
+            $(this).addClass("hd-func-dropdown-active");
+        });
+        $(".hd-language").mouseout(function () {
+            $(this).removeClass("hd-func-dropdown-active");
+        });
+
+        $(".nav-user-account").hover(function () {
+            $(this).addClass("user-account-unfold");
+
+        }, function () {
+            $(this).removeClass("user-account-unfold");
+
+        });
+
+        // 登陆未登陆界面设置
+        $.ajax({
+            url: "https://login.pcbway.com/GetSessionP.aspx?callback=?",
+            dataType: "jsonp",
+            jsonpCallback: "jasonpCallback",
+            success: function (jason) {
+                //debugger;
+                if (jason.data == 1) {
+                    //已登陆
+                    $(".flyout-user-signout").css("display", "block");
+                    $(".flyout-remind-list").css("display", "block");
+                    $("#login-stat-signed").find("b").text(jason.contactName);
+                    $(".mypcbway").find("b").text("(" + jason.awitingCount + ")");
+                    $(".flyout-remind-list").find("b").text("(" + jason.awitingCount + ")");
+                    $(".cart-number").text(jason.cartCount);
+                    //cookie[logFlag]，写入userid
+                    setCookie2('logFlag', jason.data, 3600 * 1000);
+                    $("#logFlag").val(jason.data);
+                    $("#hiduserNo").val(jason.userNo);
+                    //pcb计价
+
+                    //选项判断
+                    if ($(".clsPlatingType.active").attr("data") == "HASL with lead" || $(".clsPlatingType.active").attr("data") == "HASL lead free") {
+                        $(".custom-weight-show").show();
+                    } else {
+                        $(".custom-weight-show").hide();
+                    }
+
+                    if ($("#txthiduserid"))
+                    {
+                        $("#txthiduserid").val(jason.id);
+                    }
+
+          
+                    if (jason.IsNotAddToBoard == "True")
+                    {
+                        if ($("#radIsNotAddToBoard")) {
+
+                            if ($("#radIsNotAddToBoard")[0])
+                                $("#radIsNotAddToBoard")[0].checked = true;
+                           
+                           
+                        }
+                    }
+                  
+
+                  
+
+                    //钢网计价
+                    $("#StencilSelPcb").show();
+                    //贴片计价
+                    $("#dvSMTPCBRelation").show();
+                    //PONumber显示
+                    $("#divPONumber").show();
+                    //PONumber不显示
+                    $("#divSmtPONumber").show();
+                    //PONumber不显示
+                    $("#divStencilPONumber").show();
+                    //PONumber不显示
+                    $("#divFlexiblePONumber").show();
+                    //登陆邮箱不显示
+                    $(".unlogin-email").hide();
+                    //Top显示已登陆
+                    $(".account-unsigned").hide();
+                    $("#login-stat-signed").show();
+
+                    if ('0' == 2) { // pcb计价页
+                        //显示member导航条
+                        $("#memberNavigation").show();
+                        $("#wwwNavigation").hide();
+                    }
+                    //显示业务员邮箱
+                    $("#adminEmail").html(jason.adminEmail).attr('href', "mailTo:" + jason.adminEmail);
+                    // GetRestCount();
+
+                    $('#isshownewhere').hide();
+                    if (getCookie("isshownewhere") != "1") {
+                        setCookie2("isshownewhere", "1", 1);
+                    }
+
+                    if (typeof CallByCheckLoginSuccess === "function") {
+                        CallByCheckLoginSuccess(jason.sid, jason.id);
+                    }
+
+                }
+                else {
+                    //未登陆
+                    $(".flyout-user-signIn").css("display", "block");
+                    $(".flyout-visitors-login").css("display", "block");
+                    $(".flyout-remind-list").css("display", "none");
+                    $("#login-stat-signed").find("b").text("");
+                    $(".mypcbway").find("b").text("(0)");
+                    $(".cart-number").text("0");
+
+                    //cookie[logFlag]，写入0
+                    setCookie2('logFlag', '0', 3600 * 1000);
+                    $("#logFlag").val('0');
+                    //pcb计价
+                    $(".custom-weight-show").hide();
+                    //钢网计价
+                    $("#StencilSelPcb").hide();
+                    //贴片计价
+                    $("#dvSMTPCBRelation").hide();
+                    //PONumber不显示
+                    $("#divPONumber").hide();
+                    //PONumber不显示
+                    $("#divSmtPONumber").hide();
+                    //PONumber不显示
+                    $("#divStencilPONumber").hide();
+                    //PONumber不显示
+                    $("#divFlexiblePONumber").hide();
+                    //登陆邮箱显示
+                    $(".unlogin-email").show();
+                    //Top显示未登陆
+                    $(".account-unsigned").show();
+                    $("#login-stat-signed").hide();
+
+                    if (getCookie("isshownewhere") != "1") {
+                        $('#isshownewhere').show();
+                    }
+
+                    //显示www导航条
+                    //$("#wwwNavigation").show();
+                    //$("#memberNavigation").hide();
+                }
+
+                if(typeof CallByCheckLoginAfter === "function")
+                {
+                    CallByCheckLoginAfter(jason);
+                }
+                 
+                
+            },
+            error: function (xhr, status, error) {
+                //debugger;
+            }
+        });
+
+
+
+
+        //$.post("/ajax.aspx", { act: "GetCartNum" }, function (data) {
+
+
+        //    $(".cart-number").text(data.msg);
+
+        //})
+
+        //$.post("/ajax.aspx", { act: "GetUnPayOrderNum" }, function (data) {
+
+        //    $(".clsOrderNum").text("(" + data.msg + ")");
+
+        //    if (data.msg > 0 && 0 > 0) {
+        //        $(".flyout-remind-list").show();
+        //    }
+        //    else {
+        //        $(".flyout-remind-list").hide();
+
+        //    }
+
+        //})
+        //if (getCookie("Toptip2") != "1") {
+        //    $('#Toptip2').show();
+        //}
+        //if (getCookie("Toptip3") != "1") {
+        //    $('#Toptip3').show();
+        //}
+    });
+
+    //sign out
+    function signout() {
+        $.ajax({
+            url: "https://login.pcbway.com/RemoveSessionP.aspx?callback=?",
+            dataType: "jsonp",
+            jsonpCallback: "jasonpCallback",
+            success: function (jason) {
+                top.location.href = "https://www.pcbway.com";
+            },
+            error: function (xhr, status, error) {
+                //debugger;
+            }
+        });
+    }
+
+    function closeNotice(obj) {
+        $(obj).parent().parent().hide();
+    }
+
+    //function Toptip2() {
+    //    $('#Toptip2').hide();
+    //    setCookie2("Toptip2", "1", 1);
+    //}
+    //function Toptip3() {
+    //    $('#Toptip3').hide();
+    //    setCookie2("Toptip3", "1", 1);
+    //}
+
+    function setCookie2(name, value, time) {
+        var exp = new Date();
+        exp.setDate(exp.getDate() + time * 1);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString() + "; path=/";
+    }
+    //function getCookie2(c_name) {
+    //    if (document.cookie.length > 0) {
+    //        c_start = document.cookie.indexOf(c_name + "=")
+    //        if (c_start != -1) {
+    //            c_start = c_start + c_name.length + 1
+    //            c_end = document.cookie.indexOf(";", c_start)
+    //            if (c_end == -1) c_end = document.cookie.length
+    //            return unescape(document.cookie.substring(c_start, c_end))
+    //        }
+    //    }
+    //    return ""
+    //}
+
+
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return "";
+    }
+
+
+</script>
+
+
+
+
+
+
+    <!--topbanner-->
+    <div class="hel_banner">
+        <div class="wcontainer">
+            <div class="banner_title">
+                How can we help?
+            </div>
+            <form>
+                <div class="search_box">
+                    <div class="search_icon"></div>
+                    <div class="search_input">
+                        <input type="text" class="search_input" placeholder="Enter question or keyword. Example: Order" id="ipuSearch" autocomplete="off" name="search">
+                    </div>
+                    <div class="search_btn">
+                        <button type="submit" id="ipuSearch">Search Help</button>
+                    </div>
+                    <div class="_jhq1nh">
+                        <ul class="_ary0hq"></ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+        <!--crumbs-->
+        <div class="line_nav">
+            <div class="wcontainer">
+                <div class="crumbs">
+                    <a href="https://www.pcbway.com/helpcenter/">Help Center</a>
+                        <i class="arrows"></i>
+                        <a href="javascript:;">Technical Support</a>
+                </div>
+            </div>
+        </div>
+        <!--middle content-->
+        <div class="center-box">
+            <div class="wcontainer clearfix">
+                <!--right content-->
+                <div class="center-right">
+                    <div class="center-right-inner">
+                        <!--innert_ul有show类 显示-->
+                        <!--没搜索前显示的页面-->
+                            <h1 class="inner-title">
+                                Generate gerber file from Altium(DXP/.PCB.PCBDOC)
+                            </h1>
+                            <div id="rightinnerbox" class="right-inner-box">
+                                <div id="boot_sector" class="boot_sector">
+                                    <p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">Step1: The work before generate the Gerber file</span></strong><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">Before generate Gerber file, you need to set criteria,&nbsp;<strong>but for most of PCB designers, these are not necessarily.&nbsp;</strong>The following is a brief explanation of these settings, You can also ignore these setting when generate Gerber file.</span><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">1. The settings of PCB shape and size, generally are mechanic1,2 layers.</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">2. Before generate the Gerber file, the preprocessed of PCB file.</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">The preprocessed include:</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">a. Add break away rails of PCB</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">b. Add stamp hole.</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">c. Add the machine jack.</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">d. Add&nbsp;</span>mouting hole</p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">e. Add drilling description.</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">f. Add dimension description.</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">g. Set the origin</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">Step2: Generate Gerber file</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">1. Open the Gerber Files.</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">File -&gt; FabricationOpuputs -&gt; GerberFiles.</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873501710600005762.jpg" title="1.jpg" alt="1.jpg"></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">2.</span>&nbsp;</strong><strong><span style="font-family: Arial, sans-serif;">Parameter setting.</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">a.<span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><strong><span style="font-family: Arial, sans-serif;">“General” setting</span></strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="text-indent: 28px; font-family: Arial, sans-serif;">Set Units to “Inches”</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="text-indent: 28px; font-family: Arial, sans-serif;">And Format to “2:5”</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873508930300001626.jpg" title="2.jpg" alt="2.jpg"></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;</span></span></strong><strong><span style="font-variant-numeric: normal; font-stretch: normal; line-height: normal;"><span style="font-family: Arial, sans-serif;">b</span></span><span style="font-family: &quot;Times New Roman&quot;; font-size: 9px; font-variant-numeric: normal; font-weight: normal; font-stretch: normal; line-height: normal;">&nbsp;&nbsp;</span></strong><strong><span style="font-family: Arial, sans-serif;">“Layers” setting</span></strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Used On” in Plot Layers</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “All Off” in Mirror Layers</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Check “include unconnected mid-layer pads”</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">&nbsp;Uncheck all in Mechanical Layers to Add to All plot</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;<img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873522148900003228.jpg" title="3.jpg" alt="3.jpg"></span></span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">c.<span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><strong>“Drill Drawing” setting</strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Uncheck all boxes.</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Graphic Symbols” in Drill Drawing Symbols</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873526587600005751.jpg" title="4.jpg" alt="4.jpg"></span></span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">d.<span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;</span></span></strong><strong>“Apertures” setting</strong><strong>&nbsp;</strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select RS274X</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873530968000004319.jpg" title="5.jpg" alt="5.jpg"></span></span></strong><strong><span style="font-family: Arial, sans-serif;">e.<span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong><strong>“Advanced” setting</strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Separate file per layer” for Batch Mode</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Suppress leading zeroes” in Leading/Trailing Zeroes</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Reference to relative origin” in Position on Film</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Unsorted” in Plotter Type</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Click “OK”</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873556349500003047.jpg" title="6.jpg" alt="6.jpg"></span></span></strong><br></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;"></span></span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">Gerber
+ Files are automatically loaded in the Altium cam viewer. This tool 
+allows you to verify that all layers have been generated correctly and 
+that they are all in positive mode.&nbsp;</span></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">3.</span>&nbsp;</strong><strong><span style="font-family: Arial, sans-serif;">Generating NC Drill File</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">a.In the PCB view, and select : File / Fabrication Outputs / NC Drill Files</span></strong></p><ul class=" list-paddingleft-2" style="padding: 0px; list-style-position: outside; list-style-image: none; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Inches” in Units</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “2:5” in Format</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Suppress leading zeroes” in Leading/Trailing Zeros</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Select “Reference to relative origin” in Coordinate Positions</span></p></li><li><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px;"><span style="font-family: Arial, sans-serif;">Click “OK”</span></p></li></ul><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873583544700009336.jpg" title="7.jpg" alt="7.jpg"><br></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">b. Import Drill Data : Click “OK”</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 9px; line-height: normal; font-family: &quot;Times New Roman&quot;;"></span></span></strong><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873586770100009004.jpg" title="8.jpg" alt="8.jpg"></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">c.Import Mill/Route Data : Click “OK”</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/6362873589090700002005.jpg" title="9.jpg" alt="9.jpg"></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-family: Arial, sans-serif;">4.</span></strong><strong><span style="font-size: 19px; font-family: Arial, sans-serif;">&nbsp;Package Gerber File</span></strong></p><p style="margin-top: 8px; margin-bottom: 16px; padding: 0px; color: rgb(49, 49, 49); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif;">Compress
+ all the files in a single .zip file.All Gerber and NC Drill files 
+generated by Altium Designer are automatically saved in the Project 
+output folder.</span></p><p><br></p>
+                                </div>
+
+                                <div class="public_area">
+                                    
+
+                                    <!--Related articles-->
+                                    <div class="reas_box">
+                                        <h4 class="reas_title">Related articles</h4>
+                                        <ul class="show">
+                                            <li><a href="https://www.pcbway.com/helpcenter/technical_support/Gerber_File_Extention_from_Different_Software.html">Gerber File Extention from Different Software</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Generate_Gerber_files_in_Eagle.html">Generate Gerber files in Eagle</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Refuse_conductive_adhesive_technology_in_pcb_manufacture.html">Refuse conductive adhesive technology in pcb manufacture</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Notes_for_Gerber_files_Generated_from_Eagle_9_20.html">Notes for Gerber files Generated from Eagle 9.20</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Generate_Gerber_file_from_Kicad.html">Generate Gerber file from Kicad</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_generate_Gerber_files_from_DesignSpark.html">How to generate Gerber files from DesignSpark</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_generate_Gerber_files_from_DipTrace.html">How to generate Gerber files from DipTrace</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_generate_Gerber_file_from_AutoCAD.html">How to generate Gerber file from AutoCAD</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_generate_Gerber_files_from_CircuitMaker.html">How to generate Gerber files from CircuitMaker</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_generate_Gerber_files_from_Proteus.html">How to generate Gerber files from Proteus</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_a_PCB_Is_Made_Of.html">What a PCB Is Made Of</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_is_the_X_out_board_.html">What is the X-out board?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_create_a_Centroid_File_from_Eagle__Altium_Sprint_Layout_and_ORCAD_.html">How to create a Centroid File(pick place) from Eagle, Altium,Sprint Layout and ORCAD?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Generate_Position_File_in_Kicad.html">Generate Position File in Kicad</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_PCBs_will_be_charged_of_extra_cost_.html">What PCB cases will be charged of extra cost?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Why_the_boards_miss_the_cutouts_sots_in_the_files_.html">Why the boards miss the cutouts/sots in the files.</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Why_the_non_plated_holes__slots_in_the_files_are_produced_as_plated_holes__slots_and_cause_short_circuit_problem_.html">Why the non-plated holes /slots in the files are produced as plated holes /slots and cause short circuit problem?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Why_the_pads_don_t_cover_soldermask_as_designed_on_gerber_files_.html">Why the pads don't cover soldermask as designed on gerber files?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Why_the_vias_produced_as_soldermask_opening_when_I_choose_tenting_vias_for_my_order_.html">Why the vias produced as soldermask opening when I choose tenting vias for my order?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/If_my_design_include_gold_finger_and_I_need_to_do_bevelling__what_should_I_do_.html">If my design include gold finger and I need to do bevelling, what should I do?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/If_my_gerber_file_include_soldermask_and_silkscreen_layer_but_I_choose_no_soldermask_and_no_silkscreen_on_your_website__what_will_you_do_.html">If
+ my gerber file include soldermask and silkscreen layer but I choose no 
+soldermask and no silkscreen on your website, what will you do?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_is_your_factory_s_standard_of_panel_by_tab_route_.html">What is your factory’s standard of panel by tab-route?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_is_your_requirements_of_V_cut_.html">What is your requirements of V-cut?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_remind_PCBWay_to_pay_attention_to_special_notes__.html">How to remind PCBWay to pay attention to special notes ?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_make_my_silkscreen_clear_and_beautiful_on_PCB__.html">How to make my silkscreen clear and beautiful on PCB ?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_diameter_of_via_is_better_to_have_soldermask_covering__.html">What diameter of via is better to have soldermask covering ?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/What_is_not_correct_for_bottom_text__.html">What is not correct for bottom text ?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Can_I_send_the_working_gerber_files_to_PCBWay_for_PCB_production_.html">Can I send the working gerber files to PCBWay for PCB production?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Why_did_your_technical_reviewer_reject_my_order__I_want_it_2_layer_even_though_there_is_no_track_on_the_bottom__I_only_need_the_soldering_pads_.html">Why
+ did your technical reviewer reject my order? I want it 2 layer even 
+though there is no track on the bottom, I only need the soldering pads.</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/How_to_design_the_half__castellated__holes_for_PCB_.html">How to design the half (castellated) holes for PCB?</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/PCB_Manufacturing_Terms_Glossary.html">PCB Manufacturing Terms Glossary</a></li><li><a href="https://www.pcbway.com/helpcenter/technical_support/Electronic_Terms_Glossary.html">Electronic Terms Glossary</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="memberurl" value="https://member.pcbway.com">
+                            <input type="hidden" name="hidobjid" id="hidobjid" value="152">
+                            <input type="hidden" name="hidobjtype" id="hidobjtype" value="1">
+                            <input type="hidden" name="hidmbmessageobjtype" id="hidmbmessageobjtype" value="8">
+                            <input type="hidden" id="JsA1" value="Comments">
+                            <input type="hidden" id="JsA9" value="File exceeds the size limit!">
+                            <input type="hidden" id="JsA10" value="Are you sure you want to delete this message?">
+                            <input type="hidden" id="JsA11" value="There are sub-messages in this article and deletion is not allowed.">
+                            <input type="hidden" id="JsA12" value="Delete failed, please refresh and try again">
+                            <input type="hidden" id="JsA13" value="Reply">
+                            <input type="hidden" id="JsA14" value="delete">
+                            <input type="hidden" id="JsCancel" value="Cancel">
+                            <input type="hidden" id="JsA15" value="Post reply">
+                            <input type="hidden" id="JsA16" value="Login with your e-mail">
+                            <div class="mask"></div>
+                            <div class="close" onclick="hidebigimg()"></div>
+                            <div class="capablis"></div>
+                        <!--                新加评论开始-->
+                            <div class="module-box post-feedback ui-switchable" id="commentID">
+                                <div class="note-title clearfix">
+                                    <div class="note-number left">
+                                        Comments
+                                        <span class="num" id="comments-num">(<b id="MsgCount">0</b>)</span>
+                                    </div>
+                                    <div class="note-text left">
+                                        Note: This message is only for 
+the daily communication between PCBWay and customers. The response is 
+not very timely.<br>
+If you have any urgent questions, please contact your salesman!
+                                    </div>
+                                </div>
+                                <div class="ui-tab-body ui-switchable-content">
+                                    <div class="ui-tab-pannel ui-post-comments ui-switchable-panel">
+                                        <div class="add-comment">
+                                            <textarea id="msg-0" class="form-control" maxlength="4000"></textarea>
+                                            <!--未登录添加 disabled="disabled"-->
+
+                                            <div class="comment-login-tips" style="">
+                                                <span><img src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/note-tips.png" alt=""></span>
+                                                <a href="javascript:layerLogin();">Log in to post comments.</a>
+                                            </div>
+                                            <!--登录前-->
+
+                                            <div>
+                                                <label>Upload a photo: </label>
+                                                <button class="message-button-photo webuploader-container" id="msgFile" type="button"><div class="webuploader-pick">
+                                                    <div class="webuploader-pick">Browse</div>
+                                                </div><div id="rt_rt_1f35vl7bdugl15uq16uc1pbg1prt1" style="position: absolute; inset: 1px auto auto 8px; width: 47px; height: 16px; overflow: hidden;"><input type="file" name="file" class="webuploader-element-invisible" accept="image/*"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255) none repeat scroll 0% 0%;"></label></div></button>
+                                                <span style="color: #999; font-size: 12px;">You can only upload 1 files in total. Each file cannot exceed 2MB. Supports JPG, JPEG, GIF, PNG, BMP</span>
+                                            </div>
+
+                                            <div class="banner-img-holder">
+                                                <span id="sfile" style="border:none;"></span>
+                                                <input type="hidden" id="msgPic">
+                                                <a href="javascript:void(0)" id="removeMsgPic" style="display: none;">remove</a>
+                                            </div>
+                                            <div class="error-tips" style="display: none;">
+                                                It looks like you have not written anything. Please add a comment and try again.
+                                            </div>
+                                            <button class="btn btn-major btn-lg" onclick="savemsg(1,0,1)" id="bt-comment-submit">
+                                                Post Comment
+                                            </button>
+                                        </div>
+                                        <div class="comments-list-box">
+                                            <ul class="comments-list" id="comment_ul"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="ui-tab-pannel ui-post-likes ui-switchable-panel" id="commentload" style="display: none;">
+                                        <!--加载内容过程中-->
+                                        <div class="loading-layout"><span class="loading-m"></span></div>
+                                    </div>
+                                    <!--   新加分页-->
+                                    <div id="PageDv">
+
+                                    </div>
+
+                                    <!--   新加分页-->
+                                </div>
+                            </div>
+					<!--                新加评论结束-->
+                    </div>
+                </div>
+                <!--left nav-->
+                <div class="center-left">
+                        <div class="back_btn" onclick="window.history.go(-1)">
+                            Back
+                        </div>
+                    <div class="me-left-menu">
+                        <!--<div class="me-menu-body">-->
+                        <!--<h3 class="me-menu-header me-menu-close">-->
+                        <!--<a class="ajax-get-list" style="font-size:14px;" href="javascript:;">-->
+                        <!--Top Questions-->
+                        <!--</a>-->
+                        <!--</h3>-->
+                        <!--</div>-->
+                        <h3 class="me-menu-header me-menu-close hmy_orders"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/Findproducts/">My Orders<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/Findproducts/">Ordering</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/lead_time/">Lead Time</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/salesservice/">Sales service</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/shoppingcart/">Shopping Cart</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/placingorders/">Placing Orders</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/checkingorders/">Checking Orders</a></p></div><div class="me-menu-body divmy_orders" style="display: none;"><p id="pmy_orders" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/leavingfeedback/">Leaving Feedback</a></p></div><h3 class="me-menu-header me-menu-close hmy_account"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/registersign/">My Account<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divmy_account" style="display: none;"><p id="pmy_account" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/registersign/">Registering &amp; Signing in</a></p></div><div class="me-menu-body divmy_account" style="display: none;"><p id="pmy_account" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/accountsettings/">Account Settings</a></p></div><div class="me-menu-body divmy_account" style="display: none;"><p id="pmy_account" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/pcbwayrewards/">PCBWay Rewards</a></p></div><div class="me-menu-body divmy_account" style="display: none;"><p id="pmy_account" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/notifications/">PCBWay Notifications</a></p></div><h3 class="me-menu-header me-menu-close hbalance_coupons"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/Coupons/">Balance &amp; Coupons<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divbalance_coupons" style="display: none;"><p id="pbalance_coupons" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/Coupons/">Coupons</a></p></div><div class="me-menu-body divbalance_coupons" style="display: none;"><p id="pbalance_coupons" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/beans/">PCBWay Beans</a></p></div><div class="me-menu-body divbalance_coupons" style="display: none;"><p id="pbalance_coupons" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/promotions/">PCBWay Promotions</a></p></div><div class="me-menu-body divbalance_coupons" style="display: none;"><p id="pbalance_coupons" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/cashbalance/">Cash Coupons &amp; Balance</a></p></div><h3 class="me-menu-header me-menu-close hdelivery"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/delivery/">Delivery</a></h3><h3 class="me-menu-header me-menu-close hservice_refunds"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/disputeprocess/">Service &amp; Refunds<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divservice_refunds" style="display: none;"><p id="pservice_refunds" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/disputeprocess/">Dispute Process</a></p></div><div class="me-menu-body divservice_refunds" style="display: none;"><p id="pservice_refunds" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/receivingrefunds/">Receiving Refunds</a></p></div><h3 class="me-menu-header me-menu-close hpayments"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/paymentprocess/">Payments<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divpayments" style="display: none;"><p id="ppayments" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/paymentprocess/">Payment Process</a></p></div><div class="me-menu-body divpayments" style="display: none;"><p id="ppayments" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/paymentproblems/">Payment Problems</a></p></div><h3 class="me-menu-header me-menu-close htechnical_support"><a class="ajax-get-list" style="font-size:14px;color:#00a63f;" href="https://www.pcbway.com/helpcenter/technical_support/">Technical Support</a></h3><h3 class="me-menu-header me-menu-close hdesign_for_manufacturing"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/Engineering_Questions/">Design for PCB Manufacturing<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divdesign_for_manufacturing" style="display: none;"><p id="pdesign_for_manufacturing" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/Engineering_Questions/">PCB Engineering Questions</a></p></div><h3 class="me-menu-header me-menu-close hsmt_faq"><a class="ajax-get-list" style="font-size:14px;" href="https://www.pcbway.com/helpcenter/pcb_assembly_ordering/">PCB Assembly FAQ<i class="small-icon minus-icon"></i></a></h3><div class="me-menu-body divsmt_faq" style="display: none;"><p id="psmt_faq" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/pcb_assembly_ordering/">PCB Assembly Ordering</a></p></div><div class="me-menu-body divsmt_faq" style="display: none;"><p id="psmt_faq" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/SMT_Engineering_Questions/">SMT Engineering Questions</a></p></div><div class="me-menu-body divsmt_faq" style="display: none;"><p id="psmt_faq" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/Components_question/">Components question</a></p></div><div class="me-menu-body divsmt_faq" style="display: none;"><p id="psmt_faq" class="me-menu-title "><a class="ajax-get-list" href="https://www.pcbway.com/helpcenter/Assembly_files_problems/">Assembly files problems</a></p></div>
+                    </div>
+                    <div class="me-left-menu" style="padding-top: 10px; margin-top: 30px; border-top: 1px dashed #ccc;">
+                        <h3 class="me-menu-header me-menu-open hs">
+                            <a style="font-size: 14px;" href="javascript:showchildren('s');;">
+                                Self Service
+                                <i class="small-icon minus-icon"></i>
+                            </a>
+                        </h3>
+                        <div class="me-menu-body divs" style="display: block;">
+                            <!--ams-region-start 805-->
+
+                            <p class="me-menu-title">
+                                <a href="https://www.pcbway.com/Member/forgotpwd.aspx" target="_blank">
+                                    Retrieve Your Password
+                                </a>
+                            </p>
+                            <p class="me-menu-title">
+                                <a href="mailto:feedback@pcbway.com" rel="nofollow" target="_blank">
+                                    Report an Issue
+                                </a>
+                            </p>
+
+                            <p class="me-menu-title">
+                                <a href="https://member.pcbway.com/Order/OrderList?type=1" rel="nofollow" target="_blank">
+                                    Check My Orders
+                                </a>
+                            </p>
+                            <p class="me-menu-title">
+                                <a href="http://global.cainiao.com/?spm=a3708.7860688.0.0.37af3b18IqiqAq&amp;lang=en" target="_blank" rel="nofollow">
+                                    Track Your Packages
+                                </a>
+                            </p>
+                            <p class="me-menu-title">
+                                <a href="https://member.pcbway.com/order/aftersales" rel="nofollow" target="_blank">
+                                    Check Dispute Progress
+                                </a>
+                            </p>
+                            <!--ams-region-end 805-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <!--底部-->
+    <div class="footer">
+        
+
+<style type="text/css">
+    .gerberlist {
+        margin-bottom: 10px;
+    }
+
+        .gerberlist input {
+            border: 1px solid #cccccc;
+            color: #333;
+            float: none;
+            font-family: arial;
+            font-size: 14px;
+            height: 16px;
+            overflow: hidden;
+            padding: 5px;
+            width: 238px;
+        }
+</style>
+
+
+
+<div class="wcontainer">
+    <div class="footer_left">
+        <div class="footer_left_top">
+            <dl>
+                <dt>Capabilities</dt>
+                <dd><a href="https://www.pcbway.com/capabilities.html" target="_blank">PCB Capabilities</a></dd>
+                <dd><a href="https://www.pcbway.com/assembly-capabilities.html" target="_blank">PCB Assembly Service</a></dd>
+                <dd><a href="https://www.pcbway.com/quickturn-pcb-fabrication.html" target="_blank">Quick turn PCB Fabrication</a></dd>
+                <dd><a href="https://www.pcbway.com/stencil.aspx" target="_blank">SMD Stencils</a></dd>
+                <dd><a href="https://www.pcbway.com/prototype_pcb/" target="_blank">Prototype PCBs</a></dd>
+            </dl>
+            <dl>
+                <dt>Products/Services
+</dt>
+                <dd><a href="https://www.pcbway.com/orderonline.aspx" target="_blank">PCB Instant Quote</a></dd>
+                <dd><a href="https://www.pcbway.com/faq-of-pcb.html" target="_blank">PCB FAQs</a></dd>
+                <dd><a href="https://www.pcbway.com/pcb_prototype/" target="_blank">PCB Prototyping</a></dd>
+                <dd><a href="https://www.pcbway.com/pcb-service.html" target="_blank">Our Equipment</a></dd>
+                <dd><a href="https://www.pcbway.com/blog/" target="_blank">Blog/Engineering</a></dd>
+            </dl>
+            <dl>
+                <dt>Customer Support</dt>
+                <dd><a href="https://www.pcbway.com/helpcenter" target="_blank">Help Center
+</a></dd>
+                <dd><a href="https://www.pcbway.com/sponsor.html" target="_blank">Sponsorships</a></dd>
+                <dd><a href="https://www.pcbway.com/project/shareproject/" target="_blank">Shared Projects</a></dd>
+                <dd><a href="https://www.pcbway.com/pcb_glossary/" target="_blank">PCB Glossary</a></dd>
+                <dd><a href="https://member.pcbway.com/specials/referrals" target="_blank" rel="nofollow">Referral Program</a></dd>
+            </dl>
+            <dl>
+                <dt>About us</dt>
+                <dd><a href="https://www.pcbway.com/about.html" target="_blank">About Us</a></dd>
+                <dd><a href="https://www.pcbway.com/why.html" target="_blank">Why Buy From Us?</a></dd>
+                <dd><a href="https://www.pcbway.com/shipping_method_guide.aspx" target="_blank">Shipping Method Guide</a></dd>
+                <dd><a href="https://www.pcbway.com/privacy_policy.html" target="_blank">Privacy Policy &amp; Agreement</a></dd>
+                <dd><a href="https://www.pcbway.com/return_policy.html" target="_blank">Refund Policy</a></dd>
+
+                <dd><a href="https://www.pcbway.com/terms_service.html" target="_blank">Terms of Service</a></dd>
+            </dl>
+        </div>
+        <div class="footer_left_bottom">
+            <dl>
+                <dt>Payment Methods</dt>
+                <dd class="p-icon pay-methods">Paypal,Western Union,Bank Transfer,WebMoney,Visa,Credit Card</dd>
+            </dl>
+            <dl>
+                <dt>Delivery Services
+</dt>
+                <dd class="p-icon delivery-service">FedEx,UPS,DHL,China Post Air Mail,TNT,EMS ePacket,Hongkong Post Air Mail,EMS</dd>
+            </dl>
+            <dl>
+                <dt>Verified by
+</dt>
+                <dd><a href="https://www.pcbway.com/blog/News/PCBWay_get_UL_certificate.html" target="_blank" class="p-icon iso9001">Ul  Certificate &amp;ISO 9001:2008 Certificate</a></dd>
+            </dl>
+            <dl>
+                <dt>Link Us on
+</dt>
+                <dd class="clearfix">
+                    <a href="https://www.facebook.com/pcbway" target="_blank" title="Follow us on facebook" class="p-icon facebook">Facebook</a>
+                    <a href="https://twitter.com/PCBWayOfficial" target="_blank" title="Follow us on twitter" class="p-icon twitter">twitter</a>
+                    
+                    <a href="https://www.youtube.com/pcbway" target="_blank" title="Follow us on youtube" class="p-icon youtube">youtube</a>
+                    
+                    <a href="https://www.linkedin.com/company/pcbway" target="_blank" title="Follow us on linkedin" class="p-icon linkedin">linkedin</a>
+                    <a href="https://www.instagram.com/pcbway/" target="_blank" title="Follow us on instagram" class="p-icon instagram">instagram</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <p class="bottom-logo"><span class="p-icon">PCBWay</span> PCB Prototype the Easy Way!</p>
+
+    <div class="footer_bottom">
+        © 2019 PCBWay. All rights reserved. <a href="https://www.pcbway.com/project/img/intellectual-property-rights.html" rel="nofollow" target="_blank">INTELLECTUAL PROPERTY RIGHTS</a>
+    </div>
+</div>
+
+    <div class="cookie-bar ">
+        <div class="wcontainer">
+            <div class="bar-box">
+                <div class="bar-l">
+                    <div class="cookies-title">
+                        PCBWay and Cookies
+                    </div>
+                    <div class="cookies-des">
+                        This site uses cookies to personalise your 
+experience. By Clicking ACCEPT or continuing to browse the site you are 
+agreeing to our use of cookies.<a class="seeprivacy" href="https://www.pcbway.com/privacy_policy.html" target="_blank" style="color: #00a63f;">See our Privacy Policy here</a>.
+                    </div>
+                </div>
+                <div class="bar-r">
+                    <!--        <div class="close-cookies" onclick="document.querySelector('.cookie-bar').className='cookie-bar hidden-cookie'">-->
+                    <!--        </div>-->
+                    <a class="accept-btn" href="javascript:closepcbwaycookies()">
+                        Accept
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+
+
+    function closepcbwaycookies() {
+        $('.cookie-bar').hide();
+        setCookie("pcbwaycookies", 'true', 730);
+    }
+  
+
+
+
+    function clkPricingMatrix() {
+        if (checkForm() == false) {
+            return;
+        }
+        OpenWin('Price Comparison Matrix', 910, 450, '/pricematrix.aspx?' + $("#orderForm").serialize());
+    }
+
+    function ShowLayerOrder() {
+
+        // 判断是否登陆,未登陆不弹出层
+        if (getCookie("logFlag") == "0") {
+            return;
+        }
+
+        var layer = $("input[name='hidLayers']").val();
+
+
+        if (layer >= 10) {
+            return;
+        }
+
+        if (layer == 6) {
+            $("#divLayer5").show(); $("#divLayer6").show();
+            $("#divLayer7").hide(); $("#divLayer8").hide();
+        }
+
+        else if (layer == 8) {
+            $("#divLayer5").show(); $("#divLayer6").show();
+            $("#divLayer7").show(); $("#divLayer8").show();
+        }
+        else {
+            $("#divLayer5").hide(); $("#divLayer6").hide();
+            $("#divLayer7").hide(); $("#divLayer8").hide();
+        }
+
+
+        $('#layerorder').show();
+        $('#layerorder').dialog({
+            title: 'Please fill in the layer order from top to bottom here.',
+            width: 500,
+            height: 450,
+            closed: false,
+            cache: false,
+            modal: true
+        });
+    }
+
+
+    function SetLayerNote() {
+        var layers = $("input[name='hidLayers']").val();
+        var cx1 = $.trim($("#txtLayerCXL1").val());
+        var cx2 = $.trim($("#txtLayerCXL2").val());
+        var cx3 = $.trim($("#txtLayerCXL3").val());
+        var cx4 = $.trim($("#txtLayerCXL4").val());
+        var cx5 = $.trim($("#txtLayerCXL5").val());
+        var cx6 = $.trim($("#txtLayerCXL6").val());
+        var cx7 = $.trim($("#txtLayerCXL7").val());
+        var cx8 = $.trim($("#txtLayerCXL8").val());
+        if (cx1.length == 0 || cx2.length == 0 || cx3.length == 0 || cx4.length == 0 || (layers > 4 && (cx5.length == 0 || cx6.length == 0)) || (layers > 6 && (cx7.length == 0 || cx8.length == 0))) {
+            alert("Please input the layer order"); return;
+        }
+
+        var note = "Layer Order:L1:" + cx1 + ",L2:" + cx2 + ",L3:" + cx3 + ",L4:" + cx4;
+        if (layers > 4) {
+            note += ",L5:" + cx5 + ",L6:" + cx6;
+        }
+        if (layers > 6) {
+            note += ",L7:" + cx7 + ",L8:" + cx8;
+        }
+        //if (note.length > 0 && layers >= 4) {
+        //    var orgNote = $("#txtPCBNote").val().replace(/Layer Order:.+?\./, "") + note + ". ";
+        //    $("#txtPCBNote").val(orgNote);
+
+        //}
+        //else {
+
+        //    var orgNote = $("#txtPCBNote").val().replace(/Layer Order:.+?\./, "");
+        //    $("#txtPCBNote").val(orgNote);
+        //}
+        $("#cxipt").val(note);
+        $("#layerorder").dialog("close");
+
+    }
+
+
+
+
+    $(function () {
+
+
+
+        $("#dvConvertSize").click(function () {
+            $('#dvConvert').window('open'); // open a window
+            $('#dvConvert').window('center');
+            $('#dvConvert').show();
+
+
+        })
+
+        $("#btnConvert").click(function () {
+            $('#dvConvert').window('close'); // open a window
+
+            var x = parseFloat($.trim($("#iptSizeX").val()));
+            var y = parseFloat($.trim($("#iptSizeY").val()));
+
+            if (x) {
+                $("#hidLength").val((25.4 * x).toFixed(1));
+            }
+
+            if (y) {
+                $("#hidWidth").val((25.4 * y).toFixed(1));
+            }
+
+
+
+        })
+
+        $(".example").hover(function () {
+
+            var offset = $(this).offset();
+
+            $(this).next("img").show();
+        })
+
+        $('body').delegate('.smintip', 'mouseover', function () {
+
+            //var div = $(".wdetail-tips");
+            //$("#tipp").html('');
+            //div.css({ width: 300, left: 0, top: 25 });
+            //$("#tipp").html('<div class="wdetail-tips" style="width: 220px; display: none"><p id="tipp">' + $(this).attr("data") + '</p><a class="ui-balloon-arrow"></a></div>');
+            if ($(this).find('.wdetail-tips').length == 0)
+                $(this).append('<div class="wdetail-tips" style="width:310px; display: none;top: 25px;"><p id="tipp">' + $(this).attr("data") + '</p><a class="ui-balloon-arrow"></a></div>');
+            $(this).find('.wdetail-tips').show();
+        })
+
+        $('body').delegate('.smintip', 'mouseout', function () {
+            $(this).find('.wdetail-tips').hide();
+            //$(".wdetail-tips").hide();
+        });
+    })
+
+</script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-48288958-1', 'pcbway.com');
+    ga('send', 'pageview');
+
+</script>
+
+<!-- Google Code for 2018.3.27 -->
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 962526749;
+    var google_conversion_label = "cPFqCOiPzX8Qnfz7ygM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/962526749/?label=cPFqCOiPzX8Qnfz7ygM&amp;guid=ON&amp;script=0" />
+    </div>
+</noscript>
+
+
+<script type="text/javascript" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/VisitorJS.html"></script><iframe style="display:none" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" src="Technical%20Support%20-%20Generate%20gerber%20file%20from%20Altium(DXP_.PCB.PCBDOC)_files/VisitorData.html" width="0" height="0" frameborder="0"></iframe>
+
+
+        <!-- begin olark code -->
+            <script data-cfasync="false" type="text/javascript">
+                /*<![CDATA[*/window.olark || (function (c) {
+                    var f = window, d = document, l = f.location.protocol == "https:" ? "https:" : "http:", z = c.name, r = "load"; var nt = function () {
+                        f[z] = function () {
+                            (a.s = a.s || []).push(arguments)
+                        }; var a = f[z]._ = {
+                        }, q = c.methods.length; while (q--) {
+                            (function (n) {
+                                f[z][n] = function () {
+                                    f[z]("call", n, arguments)
+                                }
+                            })(c.methods[q])
+                        } a.l = c.loader; a.i = nt; a.p = {
+                            0: +new Date
+                        }; a.P = function (u) {
+                            a.p[u] = new Date - a.p[0]
+                        }; function s() {
+                            a.P(r); f[z](r)
+                        } f.addEventListener ? f.addEventListener(r, s, false) : f.attachEvent("on" + r, s); var ld = function () {
+                            function p(hd) {
+                                hd = "head"; return ["<", hd, "></", hd, "><", i, ' onl' + 'oad="var d=', g, ";d.getElementsByTagName('head')[0].", j, "(d.", h, "('script')).", k, "='", l, "//", a.l, "'", '"', "></", i, ">"].join("")
+                            } var i = "body", m = d[i]; if (!m) {
+                                return setTimeout(ld, 100)
+                            } a.P(1); var j = "appendChild", h = "createElement", k = "src", n = d[h]("div"), v = n[j](d[h](z)), b = d[h]("iframe"), g = "document", e = "domain", o; n.style.display = "none"; m.insertBefore(n, m.firstChild).id = z; b.frameBorder = "0"; b.id = z + "-loader"; if (/MSIE[ ]+6/.test(navigator.userAgent)) {
+                                b.src = "javascript:false"
+                            } b.allowTransparency = "true"; v[j](b); try {
+                                b.contentWindow[g].open()
+                            } catch (w) {
+                                c[e] = d[e]; o = "javascript:var d=" + g + ".open();d.domain='" + d.domain + "';"; b[k] = o + "void(0);"
+                            } try {
+                                var t = b.contentWindow[g]; t.write(p()); t.close()
+                            } catch (x) {
+                                b[k] = o + 'd.write("' + p().replace(/"/g, String.fromCharCode(92) + '"') + '");d.close();'
+                            } a.P(2)
+                        }; ld()
+                    }; nt()
+                })({
+                    loader: "static.olark.com/jsclient/loader0.js", name: "olark", methods: ["configure", "extend", "declare", "identify"]
+                });
+                /* custom configuration goes here (www.olark.com/documentation) */
+                olark.identify('4725-431-10-7949');/*]]>*/</script><noscript><a href="https://www.olark.com/site/4725-431-10-7949/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+            <!-- end olark code -->
+
+        <input type="hidden" id="hidid" value="152">
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#ipuSearch').keyup(function () {
+                getkeyword();
+            })
+            $('#ipuSearch').focus(function () {
+                getkeyword();
+            });
+            $('body').click(function () {
+                $('._jhq1nh').html('');
+                $('._jhq1nh').hide();
+            });
+            $('#ipuSearch').click(function (e) {
+                e.stopPropagation();
+            })
+
+            $('.js-tag-nav li:first').click(function () {
+                var height = $(this).find('.tag-top')[0].offsetHeight + $(this).find('.each-parent')[0].offsetHeight
+                $(this).css({ height: height }).siblings('li').css({ height: 'auto' })
+            }).trigger('click')
+            // 信息类别切换
+            $('.js-tag-nav li').click(function () {
+                $(this).addClass('active').siblings('li').removeClass('active')
+                $(this).find('.each-parent').show().siblings('.each-parent').hide()
+                var height = $(this).find('.tag-top')[0].offsetHeight + $(this).find('.each-parent')[0].offsetHeight
+                $(this).css({ height: height }).siblings('li').css({ height: 'auto' })
+            })
+            // 二级菜单切换
+            $('.js-hot-label .hot').click(function (e) {
+                $(this).addClass('active').siblings('.hot').removeClass('active')
+                var tabIndex = $(this).index()
+                $(this).parents('.each-list').find('.js-child-menu .child-menu')
+                  .eq(tabIndex).show().siblings('.child-menu').hide();
+
+                var obj = $(this).parent().parent().parent().parent();
+                var height = obj.find('.tag-top')[0].offsetHeight + obj.find('.each-parent')[0].offsetHeight
+                obj.css({ height: height }).siblings('li').css({ height: 'auto' })
+
+                e.stopPropagation()
+            })
+        });
+
+        function getkeyword() {
+            var searchval = $('#ipuSearch').val();
+            if (searchval && searchval.length > 0) {
+                $.post('/Home/GetKeyword', { searchval: searchval }, function (res) {
+                    if (res.result) {
+                        $('._jhq1nh').html(res.msg);
+                        $('._jhq1nh').show();
+                        return;
+                    }
+                    $('._jhq1nh').html('');
+                    $('._jhq1nh').hide();
+                });
+            }
+            else {
+                $('._jhq1nh').html('');
+                $('._jhq1nh').hide();
+            }
+        }
+    </script>
+    <script>
+        //点击yes
+        $('.yes_show').hide();
+        $('.yes_btn').click(function () {
+            $('.reminder_box').hide();
+            $('.yes_show').show();
+
+            $.post("/Home/SetUseFul", { Id: $("#hidid").val() });
+        })
+
+        //点击No
+        $('.no_show').hide();
+        $('.no_btn').click(function () {
+            $('.reminder_box').hide();
+            $('.no_show').show();
+            $('.yes_show').hide();
+
+            $.post("/Home/SetUseLess", { Id: $("#hidid").val() });
+        })
+
+        //点击submit
+        $('.result_box').hide();
+        $('.submit_box').click(function () {
+            var type = $('#type').val();
+            var Email = $('#Email').val();
+            var Note = $('#Note').val();
+            if (!type || type.length == 0 || !Email || Email.length == 0 || !Note || Note.length == 0) {
+                alert("Please input information!");
+                return;
+            }
+            var patt = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+            if (!patt.test(Email)) {
+                alert("Please enter the correct mailbox!");
+                return;
+            }
+            $.post("/Home/HelpMessageAdd", { HelpId: $("#hidid").val(), Type: type, Email: Email, Note: Note });
+
+            $('.no_show').hide();
+            $('.result_box').show();
+        })
+
+        function showchildren(obj) {
+            if ($('.h' + obj).hasClass('me-menu-open')) {
+                $('.h' + obj).removeClass('me-menu-open');
+                $('.h' + obj).addClass('me-menu-close');
+                $('.div' + obj).hide();
+            }
+            else {
+                $('.h' + obj).addClass('me-menu-open');
+                $('.h' + obj).removeClass('me-menu-close');
+                $('.div' + obj).show();
+            }
+        }
+
+        //$("#ipuSearch").click(function () {
+        //    var searchvalue = $("#searchvalue").val();
+        //    if (searchvalue == "")
+        //        return false;
+        //    GetDetailList(0, "", searchvalue);
+        //    return false;
+        //})
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$(".ql-clipboard").attr("contenteditable", "false");
+            //$(".ql-editor").attr("contenteditable", "false");
+        })
+        var logintype = 0;
+        function CallByCheckLoginAfter(obj) {
+            if (obj.data == 1) {
+                //已登录
+                logintype = 1;
+                $('#mbid').val(logintype);
+
+                $.getJSON($('#memberurl').val() + '/Web/WebMbMessageSetReadByProType?callback=?', { proid: $('#hidobjid').val(), protype: $('#hidmbmessageobjtype').val() }, function (res) { });
+            } else {
+                //未登录
+                $('.comment-login-tips').show();
+                $('#msg-0').attr('disabled');
+                $('#bt-comment-submit').attr('disabled');
+            }
+
+        }
+
+        function LoadCommentPage(page) {
+            LoadComment(page, '152');
+        }
+        var page = 1;
+        $(function () {
+            /*留言开始*/
+            $(document).delegate('.form-error', 'keyup', function () {
+                $(this).removeClass('form-error');
+                if (!$(this).hasClass('js-mention'))
+                    $('.error-tips').hide();
+            });
+
+            $(document).delegate('textarea', 'focus', function () {
+                if (logintype != 1) {
+                    layerLogin();
+                    return;
+                }
+            });
+
+            LoadComment(page, '152');
+
+            $('#commentviewmore').click(function () {
+                page = page + 1;
+                LoadComment(page, '152');
+            });
+            /*留言结束*/
+
+        });
+
+    </script>
+
+
+<iframe data-olark="true" aria-hidden="true" title="empty" style="width: 0px; height: 0px; position: absolute; left: 0px; bottom: 0px; border: medium none;"></iframe><div data-olark="true" id="hbl-live-chat-wrapper" role="region" aria-label="Chat widget" title="Olark Live Chat Widget"><div data-reactroot="" id="olark-wrapper" class=""><div aria-live="assertive" aria-atomic="true" role="alert" id="chat-box-announcer" style="position: absolute; visibility: visible; overflow: hidden; display: block; width: 1px; height: 1px; margin: -1px; border: 0px none; padding: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px); white-space: nowrap;"><p></p></div><style rel="stylesheet" type="text/css">#olark-wrapper #olark-container path.olark-primary {
+  fill: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-branding-link svg path {
+  fill: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-theme-bg {
+  background-color: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-theme-text {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-launch-button {
+  background-color: #3eb47f !important;
+}
+#olark-wrapper .olark-launch-button svg path {
+  stroke: #ffffff !important;
+}
+#olark-wrapper .olark-launch-button svg circle {
+  fill: #ffffff !important;
+}
+#olark-wrapper .olark-launch-button .olark-close-icon path {
+  stroke: #ffffff !important;
+}
+#olark-wrapper .olark-launch-button .olark-envelope-icon rect {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+#olark-wrapper .olark-launch-button .olark-envelope-icon path {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+#olark-wrapper .olark-launch-button .olark-button-text {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-top-bar {
+  background-color: #3eb47f !important;
+  color: #ffffff !important;
+  border-color: #37a071 !important;
+}
+#olark-wrapper .olark-top-bar p {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-top-bar-text {
+  color: #ffffff !important;
+}
+#olark-wrapper .olark-top-bar-arrow {
+  fill: #ffffff !important;
+}
+#olark-wrapper .olark-end-chat-button {
+  color: #ffffff !important;
+  background-color: rgba(48, 141, 100, 0.5) !important;
+}
+#olark-wrapper .olark-end-chat-button:hover {
+  background-color: #308d64 !important;
+}
+#olark-wrapper #olark-container .olark-operator-message:not(.olark-message-trans-bg) {
+  background-color: #3eb47f !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-is-typing-dot {
+  fill: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-send-transcript-container .olark-send-transcript-form.olark-inline-form-valid .olark-form-input-container {
+  border-color: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-send-transcript-container .olark-send-transcript-form.olark-inline-form-valid .olark-send-icon {
+  fill: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-survey-form .olark-survey-form-radio-button:checked {
+  background: #3eb47f !important;
+  border-color: #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-agent-status {
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-context-icon path {
+  stroke: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-offline-survey .olark-thank-you-component {
+  background-color: #3eb47f !important;
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-top-bar a {
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-form-container .olark-form-send-button:focus {
+  border: 2px solid #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-feedback-form-button:focus {
+  border: 2px solid #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-restart-button:focus {
+  border: 2px solid #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-button:focus {
+  border: 2px solid #3eb47f !important;
+}
+#olark-wrapper #olark-container .olark-message-link-title {
+  line-height: normal !important;
+}
+#olark-wrapper #olark-container .olark-message-link-location {
+  line-height: normal !important;
+}
+#olark-wrapper #olark-container .olark-operator-message a {
+  color: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-operator-message a svg path {
+  fill: #ffffff !important;
+}
+#olark-wrapper #olark-container .olark-visitor-message:not(.olark-message-has-border) {
+  border: none !important;
+}
+</style><!-- react-empty: 5 --><div class="olark-launch-button-wrapper"><svg class="olark-svg-clip-path" role="img" aria-hidden="true" focusable="false" aria-labelledby="olark-chat-button-clip-path-title"><title id="olark-chat-button-clip-path-title">Olark launch button clip path</title><defs><clipPath id="olark-chat-button-clip-path" clipPathUnits="objectBoundingBox"><path d="M0.11,0.09 C0.014,0.174,-0.003,0.398,0,0.499 C-0.003,0.618,0.015,0.849,0.125,0.919 C0.235,0.989,0.413,0.997,0.504,0.999 C0.604,0.999,0.719,0.999,0.869,0.924 C0.974,0.849,0.994,0.704,0.999,0.499 C1,0.295,0.984,0.155,0.879,0.075 C0.796,0.011,0.593,-0.003,0.504,0 C0.413,-0.005,0.206,0.006,0.11,0.09"></path></clipPath><clipPath id="olark-chat-button-text-clip-path" clipPathUnits="objectBoundingBox"><path d="M0.041,0.09 C0.005,0.174,-0.001,0.398,0,0.499 C-0.001,0.618,0.006,0.849,0.047,0.919 C0.088,0.989,0.467,0.997,0.502,0.999 C0.539,0.999,0.895,0.999,0.951,0.924 C0.99,0.849,0.998,0.704,1,0.499 C1,0.295,0.994,0.155,0.955,0.075 C0.923,0.011,0.535,-0.003,0.502,0 C0.467,-0.005,0.077,0.006,0.041,0.09"></path></clipPath></defs></svg><div class="olark-notification-badge olark-hidden"><div class="olark-notification-badge-text">0</div></div><div class="olark-button-focus-wrapper"><button class="olark-launch-button olark-size-md" tabindex="0" aria-label="Launch Chat Button" aria-controls="olark-container" aria-expanded="false"><svg viewBox="0 0 34 31" width="34" height="31" aria-label="chat bubble with three dots indicates an agent is available to chat" aria-hidden="true" role="img" fill="none"><title>Chat Icon</title><desc>chat bubble with three dots indicates an agent is available to chat</desc><path fill-rule="evenodd" clip-rule="eventodd" d="M8.61516 22.4845L3.35656 21.9322C2.01727 21.7915 1 20.6622 1 19.3154V6.44089C1 5.09407 2.01727 3.96471 3.35656 3.82401C9.10121 3.22057 23.8176 1.67437 30.0934 1.01451C30.8353 0.936259 31.5749 1.17703 32.1294 1.67588C32.6832 2.17473 33 2.88575 33 3.63139C33 8.31288 33 17.4426 33 22.1249C33 22.8705 32.6832 23.5808 32.1294 24.0804C31.5749 24.5792 30.8353 24.8192 30.0934 24.7417L14.8925 23.1444C13.4403 26.7304 10.0259 29.038 5.674 29.5414C5.45881 29.5624 5.25565 29.4375 5.17664 29.2359C5.09839 29.0342 5.1646 28.8048 5.33765 28.6746C7.20739 27.2518 8.36687 25.3655 8.61516 22.4845Z" stroke="white" stroke-width="2"></path><circle cx="17" cy="13" r="2" fill="white"></circle><circle cx="25" cy="13" r="2" fill="white"></circle><circle cx="9" cy="13" r="2" fill="white"></circle></svg></button></div></div><div id="olark-container" class="olark-hidden olark-size-md" aria-hidden="true" tabindex="-1" role="complementary"><div class="olark-top-bar"><div><h2 class="olark-top-bar-text">Chat with us!</h2><p>Hi there, thanks for reaching out!<br>
+What can I help you?<br></p></div></div><div class="olark-module-wrapper"><div class="olark-conversation-container" aria-label="chat"><div class="olark-message-block-container"></div></div><!-- react-empty: 33 --></div><div class="olark-branding-link"><a role="button" title="Powered by Olark" aria-hidden="true" tabindex="-1"><span class="olark-branding-link-word">powered </span><span class="olark-branding-link-word">by </span><svg width="33" height="20" viewBox="0 0 33 20" fill="none"><title>Olark Logo</title><path d="M31.8168 13.009C31.696 13.018 31.6619 13.1879 31.1622 13.2253L30.0646 13.3073C30.0634 13.3063 30.0623 13.305 30.0609 13.3041L9.9118 14.8082C9.69341 14.8245 9.48406 14.9243 9.32973 15.0858L7.02488 17.4978L7.02381 15.2559C7.02366 15.117 6.90764 15.0131 6.7648 15.0238L4.00754 15.2296L0.757554 15.44C0.344064 15.4709 -0.000153206 15.8479 5.11571e-08 16.4001C0.000153309 16.6345 0.0692726 16.9305 0.189733 16.9215C0.310501 16.9124 0.344677 16.7425 0.844451 16.7053L5.48679 16.3588C5.63299 16.3535 5.75039 16.4601 5.75054 16.6036L5.75208 19.6384C5.75238 19.9857 6.18488 20.1276 6.43775 19.863L9.8531 16.2891C10.0107 16.1242 10.2244 16.0222 10.4473 16.0056L24.2839 14.9727L31.249 14.4905C31.6625 14.4596 32.0067 14.0826 32.0064 13.5304C32.0064 13.296 31.9373 12.9999 31.8168 13.009Z" fill="#3D3683"></path><path d="M31.0489 8.72521C31.2643 7.63233 32.2328 8.38604 32.0894 8.96187C31.7665 9.93958 30.8875 11.7898 29.2554 11.917C27.8385 12.0273 26.9058 10.5122 26.9058 9.34792C26.9058 8.80103 28.574 8.10672 28.574 6.48354C28.574 6.04247 28.3407 5.76073 27.9999 5.78726C27.5694 5.82088 26.7623 6.44826 26.2063 8.36147V11.3959C26.2063 11.7311 26.2242 12.1531 25.7041 12.1936C25.3476 12.2215 24.8501 12.1377 24.8438 11.4961C24.4504 11.9771 23.9321 12.3317 23.2469 12.385C22.404 12.4506 21.3995 12.0703 21.3995 10.5178C21.3995 9.38877 21.7903 8.52909 22.3643 6.96726L20.7359 6.67061C20.718 7.3601 20.6104 8.90323 20.2875 9.95164C20.282 9.96988 20.2741 9.98389 20.2677 10.0006C19.9437 11.174 19.2245 12.6984 17.7406 12.8139C17.1129 12.8627 16.6286 12.6006 16.3595 12.1981C16.0008 12.6318 15.4986 12.9885 14.8171 13.0417C14.0062 13.1048 13.42 12.7577 13.0689 12.1644C12.6045 12.7667 11.976 13.263 11.1582 13.3267C9.7772 13.4342 9.04171 12.5564 9.04171 11.1628V4.94387C8.66623 5.25997 8.25228 5.54713 7.94776 5.69079C8.01948 6.17934 8.05535 6.65282 8.05535 7.07625C8.05535 11.5395 6.08246 13.7221 3.9839 13.8855C1.36518 14.0895 0.00195312 11.6023 0.00195312 8.44438C0.00195312 2.44639 3.62512 0.788088 3.76857 0.724023C3.82252 0.702165 3.89409 0.678801 3.96597 0.673223C4.36045 0.642472 4.59371 1.15363 4.59371 1.54179C4.59371 1.77107 4.52199 1.95317 4.36045 1.96568C4.32459 1.96854 4.30666 1.97005 4.2708 1.95497C3.64305 2.3567 1.43691 3.64011 1.43691 8.15631C1.43691 11.3493 2.76427 12.6573 4.03769 12.5582C5.52629 12.4422 6.63832 10.4856 6.65641 7.18509C6.65641 6.84999 6.63832 6.48097 6.60246 6.11317L6.26177 6.1397C4.77302 6.25562 3.57133 5.48488 3.57133 4.12655C3.57133 3.20899 4.23494 2.39876 5.20353 2.32339C6.51281 2.22148 7.26622 3.18593 7.66071 4.39004C8.15711 4.16152 8.74715 3.59911 9.04171 3.29069V3.13588C9.04171 1.81283 9.7772 0.820497 10.6739 0.750704C12.2522 0.627699 12.2702 2.4788 12.2702 3.46645C12.2702 6.05995 10.638 9.75055 10.4048 9.98043V11.0037C10.4048 11.7093 10.6918 12.1986 11.3554 12.1469C11.9378 12.1017 12.412 11.5107 12.698 10.8897C12.6889 10.7768 12.6827 10.6621 12.6827 10.544C12.6827 7.59796 14.7633 5.63637 16.9515 5.46588C17.4356 5.4282 17.7765 5.68386 17.7765 6.14256C17.7765 6.44253 17.7227 6.55258 17.5434 6.56644C17.382 6.57911 17.2025 6.5577 17.0232 6.57172C15.6602 6.67784 14.0637 7.94904 14.0637 10.4892C14.0637 11.4067 14.4583 11.9052 15.0862 11.8564C15.5703 11.8187 15.8933 11.37 16.0905 10.8606V8.14395C16.0905 7.8087 16.0188 7.70846 16.0188 7.585C16.0188 7.40863 16.2341 7.26829 16.4851 7.2487C17.077 7.20272 17.4537 7.52606 17.4537 7.94964V10.8603C17.4537 11.2485 17.633 11.6579 18.0635 11.6246C18.7809 11.5686 19.1039 10.4143 19.2652 9.62558C19.2683 9.60975 19.2726 9.59649 19.276 9.58142C19.2786 9.56619 19.279 9.55127 19.283 9.53589C19.4804 8.8149 19.552 7.34502 19.5701 6.44389C19.1216 6.2318 18.7987 5.8866 18.7987 5.37499C18.7987 4.88086 19.2292 4.52978 19.6956 4.4936C20.1259 4.45999 20.6282 4.63259 20.8254 5.34047C21.6559 5.45111 22.7768 5.68265 22.7768 5.68265C23.2498 5.77792 23.7096 6.19215 23.6378 6.60353C23.6378 6.81517 22.7626 8.54145 22.7626 10.3057C22.7626 10.7997 22.9958 11.2403 23.4801 11.2025C24.3051 11.1383 24.6101 9.98555 24.7715 9.19657C24.7893 9.10326 24.8138 9.02262 24.8432 8.95358V0.899485C24.8432 0.38787 24.6637 0.366616 24.6637 0.243159C24.6637 0.119551 24.9867 0.0239815 25.2377 0.00438519C25.8297 -0.0417416 26.2063 0.281749 26.2063 0.70518V6.20934C26.7802 5.3884 27.4978 4.6445 28.3048 4.58164C29.4169 4.49496 29.9012 5.37469 29.9012 6.36249C29.9012 7.72097 28.8967 8.8048 28.1792 9.37219C28.3586 10.1168 28.7531 10.7917 29.4527 10.7373C30.2777 10.6731 30.8876 9.51403 31.0489 8.72521ZM6.20798 4.92668L6.42315 4.9101C6.24384 4.11253 5.88506 3.54062 5.32904 3.58388C4.97027 3.61177 4.88061 3.86577 4.88061 4.05992C4.88061 4.4832 5.27525 4.99934 6.20798 4.92668ZM10.4048 2.6416V7.66942C10.7815 6.89913 11.1582 4.54109 11.1582 3.57092C11.1582 2.40644 10.961 1.89272 10.6739 1.91503C10.4767 1.9304 10.4048 2.35941 10.4048 2.6416Z" fill="#3D3683"></path></svg></a></div></div></div></div></body></html>
